@@ -31,9 +31,9 @@ I designed the movement mechanics so that the snake does not maintain a constant
 “next_cell”： works out which square the snake's head will move into next. It takes the head's position, adds the direction it's moving, and uses % to wrap it around to the other side when it               goes off the edge.
 
 “step‘： moves the game forward one step. It moves the snake one square and checks what it landed on:
-         a stone: lose a life, the stone breaks, and with 0 lives it's game over
-         fruit: the snake grows, gets faster, and the stones are reshuffled
-         nothing: the tail is removed so the snake keeps the same length
+   - a stone: lose a life, the stone breaks, and with 0 lives it's game over
+   - fruit: the snake grows, gets faster, and the stones are reshuffled
+   - nothing: the tail is removed so the snake keeps the same length
          
 ”head_for“； turns the head picture to face the way the snake is moving. The head is only drawn once, facing right. This function mirrors it to face left, or rotates it to face up or down.
 
