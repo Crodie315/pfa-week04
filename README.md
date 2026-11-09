@@ -4,7 +4,25 @@
 
 For this week's assignment, I designed a Snake game. I used Claude to generate the game rules and graphics, PowerShell to run the game logic, and Windows Terminal as the display interface for the player. The rules are straightforward: the player uses the WASD keys to control the snake's movement (up, down, left, and right). The map contains two types of objects—fruit and stones. Each time the snake eats a piece of fruit, it grows longer, and the positions of the stones are automatically randomized; additionally, the snake's movement speed increases as it consumes more fruit. If the snake hits a stone, its body turns red as a warning; three such collisions end the game, at which point a pop-up window appears offering two options: continue playing or exit.
 
-# 2. How I made batter
+# How to run it
+
+You need Windows, Windows Terminal (or PowerShell), and Python 3. No extra packages are needed.
+
+1. Download this repo (green **Code** button > **Download ZIP**) and unzip it, or download just `snake_game.py`.
+2. Open **Windows Terminal** and go to the folder that has `snake_game.py`, for example:
+   ```
+   cd Downloads\pfa-week04
+   ```
+3. Run the game:
+   ```
+   python snake_game.py
+   ```
+   (If `python` isn't found, try `py snake_game.py`.)
+4. Play with **W A S D** or the arrow keys. **SPACE** pauses, **Q** quits. On the Game Over menu, use W/S to choose and **Enter** to confirm.
+
+If it says the window is too small, make the Terminal window bigger (or the font smaller) and run it again. The keys only work on Windows.
+
+# 2. How I made it better
 
 I designed the movement mechanics so that the snake does not maintain a constant speed; instead, it moves progressively faster as the player consumes more fruit, creating a challenge. Secondly, I implemented a stone respawn mechanism: a stone reappears on the map each time a piece of fruit is eaten, forcing the player to constantly reassess fruit locations and identify safe areas to navigate. Thirdly, I added an animation of the snake opening its mouth to enhance the game's visual appeal. Finally, I incorporated an interactive element where the snake's body turns red upon colliding with a stone.
 
@@ -22,3 +40,7 @@ I designed the movement mechanics so that the snake does not maintain a constant
 # 4. One Undo
 
 The agent shrank the sprites to 2×2 pixels to make them smaller, but the snake lost its eyes and mouth. I checked the change with git diff and discarded it with git restore
+
+# 5. The def I wrote by hand
+
+I don't remember exactly which def I wrote by hand in class. The one I understand best and could write again by hand is `next_cell()`: it finds the square the snake's head moves into next and wraps around the edges with %.
